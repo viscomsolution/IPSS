@@ -15,7 +15,7 @@
 
 ![](results/2023-07-16-10-17-54.jpg)
 
-![](results/2023-07-16-10-41-49.jpg)
+![](results/2023-07-17-05-18-03.jpg)
 
 ## Demo chức năng
 Để test độ chính xác của phần mềm quý khách có thể chạy chương trình build sẵn (.exe) tại đường dẫn:
