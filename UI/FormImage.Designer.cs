@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImage));
             this.timerProgressbar = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timerClear = new System.Windows.Forms.Timer(this.components);
@@ -44,6 +43,7 @@
             this.picInput = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.picWebcam = new System.Windows.Forms.PictureBox();
+            this.chk_draw = new System.Windows.Forms.CheckBox();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,13 +69,14 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(183)))), ((int)(((byte)(110)))));
+            this.panelLogo.Controls.Add(this.chk_draw);
             this.panelLogo.Controls.Add(this.txt_fileName);
             this.panelLogo.Controls.Add(this.btn_select);
             this.panelLogo.Controls.Add(this.lbl_result);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(1023, 70);
+            this.panelLogo.Size = new System.Drawing.Size(1023, 86);
             this.panelLogo.TabIndex = 21;
             // 
             // txt_fileName
@@ -118,9 +119,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.picWebcam);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Location = new System.Drawing.Point(0, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1023, 435);
+            this.panel1.Size = new System.Drawing.Size(1023, 419);
             this.panel1.TabIndex = 24;
             // 
             // panel2
@@ -132,7 +133,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 435);
+            this.panel2.Size = new System.Drawing.Size(1023, 419);
             this.panel2.TabIndex = 26;
             // 
             // picResult
@@ -187,6 +188,19 @@
             this.picWebcam.TabIndex = 24;
             this.picWebcam.TabStop = false;
             // 
+            // chk_draw
+            // 
+            this.chk_draw.AutoSize = true;
+            this.chk_draw.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chk_draw.ForeColor = System.Drawing.Color.White;
+            this.chk_draw.Location = new System.Drawing.Point(21, 54);
+            this.chk_draw.Name = "chk_draw";
+            this.chk_draw.Size = new System.Drawing.Size(120, 23);
+            this.chk_draw.TabIndex = 6;
+            this.chk_draw.Text = "Draw rectangle";
+            this.chk_draw.UseVisualStyleBackColor = true;
+            this.chk_draw.CheckedChanged += new System.EventHandler(this.chk_draw_CheckedChanged);
+            // 
             // FormImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,7 +208,6 @@
             this.ClientSize = new System.Drawing.Size(1023, 505);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLogo);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormImage";
             this.Text = "Phần mềm đọc Căn cước Công dân";
             this.Load += new System.EventHandler(this.FormImage_Load);
@@ -226,6 +239,7 @@
         private System.Windows.Forms.Button btn_select;
         private System.Windows.Forms.TextBox txt_fileName;
         private System.Windows.Forms.PictureBox picResult;
+        private System.Windows.Forms.CheckBox chk_draw;
     }
 }
 

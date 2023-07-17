@@ -35,7 +35,7 @@ namespace UI
 
         private void FormImage_Load(object sender, EventArgs e)
         {
-            
+            chk_draw.Checked = Program.reader.DrawRectangle;
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +74,13 @@ namespace UI
                 Thread t = new Thread(() => Read(fileName));
                 t.Start();
             }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void chk_draw_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.reader.DrawRectangle = chk_draw.Checked;
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
