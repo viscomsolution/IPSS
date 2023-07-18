@@ -1,4 +1,4 @@
-# IPSSb - module đọc biển số xe máy & xe hơi ở Việt Nam
+# IPSS v4 - module đọc biển số xe máy & xe hơi
 
 ![](results/2023-07-16-10-35-27.jpg)
 
@@ -19,9 +19,8 @@
 
 ## Demo chức năng
 Để test độ chính xác của phần mềm quý khách có thể chạy chương trình build sẵn (.exe) tại đường dẫn:
-```
 https://viscomsolution.com/download/IPSS.zip
-```
+
 
 Quý khách cần cài đặt thư viện để chạy chương trình:
 - Microsoft .NET Framework 4.6.1: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net461
