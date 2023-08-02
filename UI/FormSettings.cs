@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TGMTcs;
 
-namespace IPSS
+namespace UI
 {
     public partial class FormSettings : Form
     {
@@ -52,23 +52,23 @@ namespace IPSS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            Program.g_detector.EnableDeepScan = chk_enableDeepScan.Checked;
-            TGMTregistry.GetInstance().SaveValue("EnableDeepScan", Program.g_detector.EnableDeepScan);
+            //Program.reader.EnableDeepScan = chk_enableDeepScan.Checked;
+            //TGMTregistry.GetInstance().SaveValue("EnableDeepScan", Program.g_detector.EnableDeepScan);
 
 
-            Program.g_detector.EnableLog = chkEnableLog.Checked;
-            TGMTregistry.GetInstance().SaveValue("EnableLog", Program.g_detector.EnableLog);            
+            //Program.g_detector.EnableLog = chkEnableLog.Checked;
+            //TGMTregistry.GetInstance().SaveValue("EnableLog", Program.g_detector.EnableLog);            
 
 
             
 
 
-            Program.g_detector.CropResultImage = chkCrop.Checked;
-            TGMTregistry.GetInstance().SaveValue("CropResultImage", Program.g_detector.CropResultImage);
+            //Program.g_detector.CropResultImage = chkCrop.Checked;
+            //TGMTregistry.GetInstance().SaveValue("CropResultImage", Program.g_detector.CropResultImage);
 
 
-            Program.folderOutput = txtFolderOutput.Text != "" ? TGMTutil.CorrectPath(txtFolderOutput.Text) : "";
-            TGMTregistry.GetInstance().SaveValue("folderOutput", txtFolderOutput.Text);
+            //Program.folderOutput = txtFolderOutput.Text != "" ? TGMTutil.CorrectPath(txtFolderOutput.Text) : "";
+            //TGMTregistry.GetInstance().SaveValue("folderOutput", txtFolderOutput.Text);
 
         }
     }

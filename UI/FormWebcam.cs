@@ -19,11 +19,9 @@ namespace UI
         static FormWebcam m_instance;
         VideoCaptureDevice m_videoSource;
         Bitmap g_bmp;
-        double g_scaleX = 1;
-        double g_scaleY = 1;
 
         private static Random random = new Random();
-        Stopwatch watch;
+        Stopwatch m_watch;
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -110,11 +108,9 @@ namespace UI
             if (g_bmp != null)
                 g_bmp.Dispose();
 
-            g_scaleX = (float)eventArgs.Frame.Width / picCamera.Width;
-            g_scaleY = (float)eventArgs.Frame.Height / picCamera.Height;
 
             g_bmp = (Bitmap)eventArgs.Frame.Clone();
-            picCamera.Image = g_bmp;
+            picCamera.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -142,7 +138,7 @@ namespace UI
             FormMain.GetInstance().PrintMessage("");
             FormMain.GetInstance().StartProgressbar();
 
-            watch = Stopwatch.StartNew();
+            
             Thread t = new Thread(() => Read((Bitmap)g_bmp.Clone()));
             t.Start();            
         }
@@ -151,11 +147,16 @@ namespace UI
 
         void Read(Bitmap bmp)
         {
+            m_watch = Stopwatch.StartNew();
             PlateInfo result = Program.reader.Read(bmp);
+            m_watch.Stop();
+
             this.Invoke(new Action(() =>
             {
                 FormMain.GetInstance().StopProgressbar();
                 lbl_result.Text = result.text;
+
+                lbl_result.ForeColor = result.isValid ? Color.White : Color.Red;
 
                 if (result.bitmap == null)
                 {
@@ -164,12 +165,12 @@ namespace UI
                 else
                 {
                     picResult.Image = result.bitmap;
-                    FormMain.GetInstance().PrintMessage("Elapsed: " + watch.ElapsedMilliseconds.ToString() + "ms");
+                    FormMain.GetInstance().PrintMessage("Elapsed: " + m_watch.ElapsedMilliseconds.ToString() + "ms");
                 }
                 
 
                 btnRead.Enabled = true;
-                watch.Stop();
+                
             }));
         }
 
@@ -207,6 +208,7 @@ namespace UI
 
         private void FormWebcam_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timerProgressbar.Stop();
             StopAllCamera();
         }
     }

@@ -39,17 +39,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picResult = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.picCamera = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.picWebcam = new System.Windows.Forms.PictureBox();
-            this.picResult = new System.Windows.Forms.PictureBox();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWebcam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.SuspendLayout();
             // 
             // timerProgressbar
@@ -149,6 +149,16 @@
             this.panel2.Size = new System.Drawing.Size(982, 408);
             this.panel2.TabIndex = 26;
             // 
+            // picResult
+            // 
+            this.picResult.BackColor = System.Drawing.Color.White;
+            this.picResult.Location = new System.Drawing.Point(489, 39);
+            this.picResult.Name = "picResult";
+            this.picResult.Size = new System.Drawing.Size(480, 320);
+            this.picResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picResult.TabIndex = 26;
+            this.picResult.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -191,16 +201,6 @@
             this.picWebcam.TabIndex = 24;
             this.picWebcam.TabStop = false;
             // 
-            // picResult
-            // 
-            this.picResult.BackColor = System.Drawing.Color.White;
-            this.picResult.Location = new System.Drawing.Point(489, 39);
-            this.picResult.Name = "picResult";
-            this.picResult.Size = new System.Drawing.Size(480, 320);
-            this.picResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picResult.TabIndex = 26;
-            this.picResult.TabStop = false;
-            // 
             // FormWebcam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,7 +209,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLogo);
             this.Name = "FormWebcam";
-            this.Text = "Phần mềm đọc Căn cước Công dân";
+            this.Text = "Phần mềm đọc biển số xe máy xe hơi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormWebcam_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.VisibleChanged += new System.EventHandler(this.FormWebcam_VisibleChanged);
@@ -219,9 +219,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWebcam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             this.ResumeLayout(false);
 
         }

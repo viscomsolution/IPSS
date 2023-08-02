@@ -41,6 +41,8 @@ namespace UI
         {
             TGMTregistry.GetInstance().Init("IPSS");
 
+            lbl_version.Text = TGMTutil.GetVersion();
+
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
             worker.DoWork += worker_DoWork;
@@ -61,10 +63,22 @@ namespace UI
 
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            btnImage.PerformClick();
+            
             StopProgressbar();
 
-            this.Text += Program.reader.IsLicense ? " (Licensed)" : " (Vui lòng liên hệ: 0939.825.125)";
+            this.Text += " " + Program.reader.Version + " " + (Program.reader.IsLicense ? " (Licensed)" : " (Vui lòng liên hệ: 0939.825.125)");
+
+
+            string childform = TGMTregistry.GetInstance().ReadString("childform");
+            if (childform == "" || childform == "FormImage")
+                btnImage.PerformClick();
+            else if (childform == "FormWebcam")
+                btnWebcam.PerformClick();
+            else if (childform == "FormFolder")
+                btnFolder.PerformClick();
+            else if (childform == "FormRealtime")
+                btn_realtime.PerformClick();
+
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,6 +98,27 @@ namespace UI
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btnFolder_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(FormFolder.GetInstance(), sender);
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_ipCamera_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_realtime_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(FormRealtime.GetInstance(), sender);
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btnSettings_Click(object sender, EventArgs e)
         {
             OpenChildForm(FormFolder.GetInstance(), sender);
         }
@@ -138,6 +173,8 @@ namespace UI
             this.panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
+            TGMTregistry.GetInstance().SaveValue("childform", childForm.Name);
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -236,7 +273,8 @@ namespace UI
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormWebcam.GetInstance().StopAllCamera();
+            if(activeForm != null)
+                activeForm.Close();
         }
     }
 }

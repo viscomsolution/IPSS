@@ -43,8 +43,7 @@
     <Reference Include="AForge.Video.DirectShow">
       <HintPath>.\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
-    <Reference Include="IPSS, Version=1.0.8597.39970, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="IPSS">
       <HintPath>..\bin\Release\IPSS.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -73,6 +72,18 @@
     <Compile Include="FormImage.Designer.cs">
       <DependentUpon>FormImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRealtime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRealtime.Designer.cs">
+      <DependentUpon>FormRealtime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWebcam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +107,23 @@
     <Compile Include="TGMTcs\TGMTregistry.cs" />
     <Compile Include="TGMTcs\TGMTutil.cs" />
     <Compile Include="ThemeColor.cs" />
+    <Compile Include="UC\UCplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCplate.Designer.cs">
+      <DependentUpon>UCplate.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormFolder.resx">
       <DependentUpon>FormFolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormImage.resx">
       <DependentUpon>FormImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRealtime.resx">
+      <DependentUpon>FormRealtime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWebcam.resx">
       <DependentUpon>FormWebcam.cs</DependentUpon>
@@ -112,6 +135,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCplate.resx">
+      <DependentUpon>UCplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="car_plate.ico" />
+    <None Include="Resources\cctv_32px1.png" />
+    <None Include="Resources\van-icon-32.png" />
+    <None Include="Resources\car_running_32.png" />
+    <None Include="Resources\icon-number-plate_white1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

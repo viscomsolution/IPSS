@@ -17,9 +17,7 @@ namespace UI
 {
     public partial class FormFolder : Form
     {
-        double g_scaleX = 1;
-        double g_scaleY = 1;
-        string m_folderOutput;
+        string m_folderOutput = "";
 
         static FormFolder m_instance;
 
