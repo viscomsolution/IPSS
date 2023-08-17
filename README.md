@@ -1,5 +1,7 @@
 # IPSS v4 - module đọc biển số xe máy & xe hơi
 
+https://viscomsolution.com/ipss-v4-phan-mem-nhan-dien-bien-so-xe-may-xe-hoi/
+
 ![](results/2023-07-16-10-35-27.jpg)
 
 ## Tính năng
@@ -34,11 +36,11 @@ Thông tin về source code example:
 - Viết bằng ngôn ngữ C#
 - Chỉ có 1 phiên bản x64
 - Build bằng Visual Studio 2017 trở lên
-- Chỉ chạy trên Windows 10 x64
+- Chỉ chạy trên Windows 10 x64 (Không hỗ trợ Windows 7, Windows 10 x86)
 - Kết quả trả về bao gồm: ký tự biển số, mã lỗi (nếu có)
 	
 	
-## Thông tin liên hệ
+## Thông tin liên hệ & mua license key
 	
 Võ Hùng Vĩ
-Phone/zalo: 0939.825.125
+Phone/zalo: 0939825125
