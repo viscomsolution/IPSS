@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33919.361
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPSSlistener", "IPSSlistener\IPSSlistener.csproj", "{443E8145-0216-4CE7-B138-91E732FE28B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{443E8145-0216-4CE7-B138-91E732FE28B0}.Debug|x64.ActiveCfg = Debug|x64
+		{443E8145-0216-4CE7-B138-91E732FE28B0}.Debug|x64.Build.0 = Debug|x64
+		{443E8145-0216-4CE7-B138-91E732FE28B0}.Release|x64.ActiveCfg = Release|x64
+		{443E8145-0216-4CE7-B138-91E732FE28B0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1093ABB2-CE6C-4CC2-B02E-B338093D8F5A}
+	EndGlobalSection
+EndGlobal

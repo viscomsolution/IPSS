@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33919.361
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPSScaller", "IPSScaller\IPSScaller.csproj", "{4A925156-3128-4A87-A2D4-43C785AC7A9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A925156-3128-4A87-A2D4-43C785AC7A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A925156-3128-4A87-A2D4-43C785AC7A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A925156-3128-4A87-A2D4-43C785AC7A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A925156-3128-4A87-A2D4-43C785AC7A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60BF3129-3924-42E5-BC1D-947E47993BDA}
+	EndGlobalSection
+EndGlobal
