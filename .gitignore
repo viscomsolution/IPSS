@@ -1,3 +1,6 @@
 UI/obj/
 *.txt
 *.key
+/bin/Release/input/*.jpg
+/bin/Release/output/*.jpg
+/ExampleConsole/obj
