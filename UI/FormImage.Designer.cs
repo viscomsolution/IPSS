@@ -33,6 +33,8 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timerClear = new System.Windows.Forms.Timer(this.components);
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btn_detect = new System.Windows.Forms.Button();
+            this.chk_draw = new System.Windows.Forms.CheckBox();
             this.txt_fileName = new System.Windows.Forms.TextBox();
             this.btn_select = new System.Windows.Forms.Button();
             this.lbl_result = new System.Windows.Forms.Label();
@@ -43,7 +45,7 @@
             this.picInput = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.picWebcam = new System.Windows.Forms.PictureBox();
-            this.chk_draw = new System.Windows.Forms.CheckBox();
+            this.chk_crop = new System.Windows.Forms.CheckBox();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,6 +71,8 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(183)))), ((int)(((byte)(110)))));
+            this.panelLogo.Controls.Add(this.chk_crop);
+            this.panelLogo.Controls.Add(this.btn_detect);
             this.panelLogo.Controls.Add(this.chk_draw);
             this.panelLogo.Controls.Add(this.txt_fileName);
             this.panelLogo.Controls.Add(this.btn_select);
@@ -78,6 +82,32 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(1023, 86);
             this.panelLogo.TabIndex = 21;
+            // 
+            // btn_detect
+            // 
+            this.btn_detect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(188)))));
+            this.btn_detect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_detect.ForeColor = System.Drawing.Color.White;
+            this.btn_detect.Location = new System.Drawing.Point(507, 14);
+            this.btn_detect.Name = "btn_detect";
+            this.btn_detect.Size = new System.Drawing.Size(94, 35);
+            this.btn_detect.TabIndex = 7;
+            this.btn_detect.Text = "Detect";
+            this.btn_detect.UseVisualStyleBackColor = false;
+            this.btn_detect.Click += new System.EventHandler(this.btn_detect_Click);
+            // 
+            // chk_draw
+            // 
+            this.chk_draw.AutoSize = true;
+            this.chk_draw.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chk_draw.ForeColor = System.Drawing.Color.White;
+            this.chk_draw.Location = new System.Drawing.Point(169, 57);
+            this.chk_draw.Name = "chk_draw";
+            this.chk_draw.Size = new System.Drawing.Size(120, 23);
+            this.chk_draw.TabIndex = 6;
+            this.chk_draw.Text = "Draw rectangle";
+            this.chk_draw.UseVisualStyleBackColor = true;
+            this.chk_draw.CheckedChanged += new System.EventHandler(this.chk_draw_CheckedChanged);
             // 
             // txt_fileName
             // 
@@ -97,7 +127,7 @@
             this.btn_select.Name = "btn_select";
             this.btn_select.Size = new System.Drawing.Size(94, 35);
             this.btn_select.TabIndex = 4;
-            this.btn_select.Text = "Chọn ảnh";
+            this.btn_select.Text = "Select";
             this.btn_select.UseVisualStyleBackColor = false;
             this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
             // 
@@ -106,7 +136,7 @@
             this.lbl_result.AutoSize = true;
             this.lbl_result.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_result.ForeColor = System.Drawing.Color.White;
-            this.lbl_result.Location = new System.Drawing.Point(507, 18);
+            this.lbl_result.Location = new System.Drawing.Point(607, 14);
             this.lbl_result.Name = "lbl_result";
             this.lbl_result.Size = new System.Drawing.Size(76, 30);
             this.lbl_result.TabIndex = 2;
@@ -188,18 +218,18 @@
             this.picWebcam.TabIndex = 24;
             this.picWebcam.TabStop = false;
             // 
-            // chk_draw
+            // chk_crop
             // 
-            this.chk_draw.AutoSize = true;
-            this.chk_draw.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.chk_draw.ForeColor = System.Drawing.Color.White;
-            this.chk_draw.Location = new System.Drawing.Point(21, 54);
-            this.chk_draw.Name = "chk_draw";
-            this.chk_draw.Size = new System.Drawing.Size(120, 23);
-            this.chk_draw.TabIndex = 6;
-            this.chk_draw.Text = "Draw rectangle";
-            this.chk_draw.UseVisualStyleBackColor = true;
-            this.chk_draw.CheckedChanged += new System.EventHandler(this.chk_draw_CheckedChanged);
+            this.chk_crop.AutoSize = true;
+            this.chk_crop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chk_crop.ForeColor = System.Drawing.Color.White;
+            this.chk_crop.Location = new System.Drawing.Point(21, 57);
+            this.chk_crop.Name = "chk_crop";
+            this.chk_crop.Size = new System.Drawing.Size(92, 23);
+            this.chk_crop.TabIndex = 8;
+            this.chk_crop.Text = "Crop plate";
+            this.chk_crop.UseVisualStyleBackColor = true;
+            this.chk_crop.CheckedChanged += new System.EventHandler(this.chk_crop_CheckedChanged);
             // 
             // FormImage
             // 
@@ -240,6 +270,8 @@
         private System.Windows.Forms.TextBox txt_fileName;
         private System.Windows.Forms.PictureBox picResult;
         private System.Windows.Forms.CheckBox chk_draw;
+        private System.Windows.Forms.Button btn_detect;
+        private System.Windows.Forms.CheckBox chk_crop;
     }
 }
 

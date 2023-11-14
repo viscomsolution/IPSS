@@ -9,6 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using TGMT;
 using TGMTcs;
+using System.IO;
 
 namespace UI
 {
@@ -54,17 +55,41 @@ namespace UI
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        private void chk_crop_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.reader.CropPlate = chk_crop.Checked;
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void chk_draw_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.reader.DrawRectangle = chk_draw.Checked;
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         private void txt_fileName_TextChanged(object sender, EventArgs e)
+        {
+            Read();
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        void Read()
         {
             if (txt_fileName.Text == "")
                 return;
 
-            btn_select.Enabled = false;
-
             string fileName = txt_fileName.Text.Replace("\"", "");
+            if(!File.Exists(fileName))
+            {
+                FormMain.GetInstance().PrintError("File not exist");
+                return;
+            }
             lbl_result.Text = "";
             Bitmap bmp = TGMTimage.LoadBitmapWithoutLock(fileName);
-            if(bmp != null)
+            if (bmp != null)
             {
                 picInput.Image = bmp;
                 FormMain.GetInstance().PrintMessage("");
@@ -74,13 +99,7 @@ namespace UI
                 Thread t = new Thread(() => Read(fileName));
                 t.Start();
             }
-        }
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void chk_draw_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.reader.DrawRectangle = chk_draw.Checked;
+            
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,6 +129,13 @@ namespace UI
                 btn_select.Enabled = true;                
                 
             }));
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_detect_Click(object sender, EventArgs e)
+        {
+            Read();
         }
     }
 }
